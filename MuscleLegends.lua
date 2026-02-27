@@ -39,7 +39,7 @@ local Window = Rayfield:CreateWindow({
 
 -- Load your source
 local function LoadSource()
-    loadstring(httpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua"))()
 end
 
 -- Create Tab
