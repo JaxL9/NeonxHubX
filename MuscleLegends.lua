@@ -1,10 +1,4 @@
--- Delta-compatible request
-local function httpGet(url)
-    return request({
-        Url = url,
-        Method = "GET"
-    }).Body
-end
+
 
 -- Load Rayfield
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield-gen2"))()
