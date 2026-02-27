@@ -97,7 +97,7 @@ local Config = {
         },
         {
             Name = "Muscle Legends",
-            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends"
+            Url  = "https://raw.githubusercontent.com/StupidProAArsenal/main/main/Musclas%20Legenos.lua"
         },
         
         {
