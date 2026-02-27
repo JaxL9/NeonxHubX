@@ -1,7 +1,7 @@
 
 
 -- Load Rayfield
-local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield-gen2"))()
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 -- Create Window
 local Window = Rayfield:CreateWindow({
@@ -46,3 +46,6 @@ FarmingTab:CreateButton({
         LoadSource()
     end
 })
+
+ Rayfield:LoadConfiguration()
+
