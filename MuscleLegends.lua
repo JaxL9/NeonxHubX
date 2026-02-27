@@ -1,5 +1,3 @@
-
-
 -- Load Rayfield
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
@@ -31,9 +29,27 @@ local Window = Rayfield:CreateWindow({
     KeySystem = false
 })
 
--- Load your source
+-- Safe Load Function
 local function LoadSource()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua"))()
+    local success, err = pcall(function()
+        local code = game:HttpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua")
+        loadstring(code)()
+    end)
+
+    if not success then
+        warn("LoadSource Error:", err)
+        Rayfield:Notify({
+            Title = "Error",
+            Content = "Script failed to load. Check console.",
+            Duration = 6
+        })
+    else
+        Rayfield:Notify({
+            Title = "Success",
+            Content = "Farming Script Loaded!",
+            Duration = 4
+        })
+    end
 end
 
 -- Create Tab
@@ -42,10 +58,7 @@ local FarmingTab = Window:CreateTab("Farming", nil)
 -- Create Button
 FarmingTab:CreateButton({
     Name = "Load Farming Script",
-    Callback = function()
-        LoadSource()
-    end
+    Callback = LoadSource
 })
 
- Rayfield:LoadConfiguration()
-
+Rayfield:LoadConfiguration()
