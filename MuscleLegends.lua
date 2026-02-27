@@ -7,7 +7,7 @@ local function httpGet(url)
 end
 
 -- Load Rayfield
-local Rayfield = loadstring(httpGet("https://sirius.menu/rayfield-gen2"))()
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield-gen2"))()
 
 -- Create Window
 local Window = Rayfield:CreateWindow({
