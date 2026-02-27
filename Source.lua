@@ -92,31 +92,31 @@ local Config = {
     
     Scripts = {
         {
-            Name    = "Anti AFK",
-            Url     = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
+            Name = "Anti AFK",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
         },
         {
-            Name    = "Muscle Legends",
-            Url     = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends"
+            Name = "Muscle Legends",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends"
         },
         {
-            Name    = "Muscle Legends (PC version)",
-            Url     = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends%20(PC)"
+            Name = "Muscle Legends (PC version)",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends%20(PC)"
         },
         {
-            Name    = "Muscle Legends (Server Hop Kill)",
-            Url     = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
+            Name = "Muscle Legends (Server Hop Kill)",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
         },
         {
-            Name    = "Legends of Speed",
-            Url     = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
+            Name = "Legends of Speed",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
         },
         {
-            Name    = "Ninja Legends",
-            Url     = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
-           }
-        },
-    },
+            Name = "Ninja Legends",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
+        }
+    }
 }
 
+Loader.new(Config)
 Loader.new(Config)
