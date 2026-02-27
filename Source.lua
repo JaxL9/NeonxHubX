@@ -73,9 +73,11 @@ end
 function Loader:_addInfo()
     self.tabs.Info:AddParagraph({
         Title = "About",
-        Content = "Script Loader by limkutr\n\nSelect a script from the Scripts tab. Confirm before loading. Loader UI will close after loading."
+        Content = "Note\n Some scripts are not maintained by me \n\nScript Loader by limkutr\n\nSelect a script from the Scripts tab. Confirm before loading. Loader UI will close after loading."
     })
 end
+
+
 
 local Config = {
     Window = {
@@ -87,6 +89,7 @@ local Config = {
         Theme        = "Dark",
         MinimizeKey  = Enum.KeyCode.LeftControl
     },
+    
     Scripts = {
         {
             Name    = "Anti AFK",
