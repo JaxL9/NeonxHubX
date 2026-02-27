@@ -96,13 +96,14 @@ local Config = {
             Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
         },
         {
+        Name = "Lunar Hub Muscle Legends"
+        Url = "https://raw.githubusercontent.com/HVX-Havoc/Lurnai-Hub/refs/heads/main/Lurnai/Games/Loader.lua"
+        },
+        {
             Name = "Muscle Legends",
             Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends"
         },
-        {
-            Name = "Muscle Legends (PC version)",
-            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends%20(PC)"
-        },
+        
         {
             Name = "Muscle Legends (Server Hop Kill)",
             Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
