@@ -96,10 +96,6 @@ local Config = {
             Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
         },
         {
-        Name = "Lunar Hub Muscle Legends"
-        Url = "https://raw.githubusercontent.com/HVX-Havoc/Lurnai-Hub/refs/heads/main/Lurnai/Games/Loader.lua"
-        },
-        {
             Name = "Muscle Legends",
             Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Muscle%20Legends"
         },
