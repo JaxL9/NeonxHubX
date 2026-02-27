@@ -1,5 +1,13 @@
--- Load Rayfield UI
-local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield-gen2"))()
+-- Delta-compatible request
+local function httpGet(url)
+    return request({
+        Url = url,
+        Method = "GET"
+    }).Body
+end
+
+-- Load Rayfield
+local Rayfield = loadstring(httpGet("https://sirius.menu/rayfield-gen2"))()
 
 -- Create Window
 local Window = Rayfield:CreateWindow({
@@ -27,11 +35,11 @@ local Window = Rayfield:CreateWindow({
     },
 
     KeySystem = false
-)}
+})
 
--- Function that loads your own source
+-- Load your source
 local function LoadSource()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua"))()
+    loadstring(httpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua"))()
 end
 
 -- Create Tab
