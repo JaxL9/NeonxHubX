@@ -27,7 +27,7 @@ local Window = Rayfield:CreateWindow({
     },
 
     KeySystem = false
-})
+)}
 
 -- Function that loads your own source
 local function LoadSource()
