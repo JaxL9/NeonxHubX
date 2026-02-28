@@ -95,18 +95,22 @@ local Config = {
         Name = "Anti AFK",
         Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
     },
+
     {
         Name = "Muscle Legends (Server Hop Kill)",
         Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
     },
+
     {
         Name = "Muscle Legends Ktm Hub",
         Url  = "https://raw.githubusercontent.com/zapstreams123/Key-System/main/Free"
     },
+
     {
         Name = "Legends of Speed",
         Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
     },
+
     {
         Name = "Ninja Legends",
         Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
