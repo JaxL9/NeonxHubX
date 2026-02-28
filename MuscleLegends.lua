@@ -4,10 +4,12 @@ do
     local ok, lib = pcall(function()
         return loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
     end)
+
     if not ok or not lib then
         warn("Failed to load Rayfield library:", lib)
         return
     end
+
     Rayfield = lib
 end
 
@@ -54,16 +56,9 @@ local function LoadSource()
         end
 
         compiled()
-
     end)
 
     if not success then
-        warn("LoadSource Error:", err)
-    else
-        print("Script Loaded Successfully")
-    end
-end
-    if not ok then
         warn("LoadSource Error:", err)
         pcall(function()
             Rayfield:Notify({
@@ -83,7 +78,14 @@ end
     end
 end
 
+-- Create Tab
+local FarmingTab = Window:CreateTab("Farming", nil)
 
+-- Create Button
+FarmingTab:CreateButton({
+    Name = "Load Farming Script",
+    Callback = LoadSource
+})
 
 -- Load configuration safely
 pcall(function()
