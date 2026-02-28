@@ -1,5 +1,15 @@
--- Load Rayfield
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+-- Load Rayfield safely
+local Rayfield
+do
+    local ok, lib = pcall(function()
+        return loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+    end)
+    if not ok or not lib then
+        warn("Failed to load Rayfield library:", lib)
+        return
+    end
+    Rayfield = lib
+end
 
 -- Create Window
 local Window = Rayfield:CreateWindow({
@@ -29,36 +39,60 @@ local Window = Rayfield:CreateWindow({
     KeySystem = false
 })
 
--- Safe Load Function
+-- Safe LoadSource function
 local function LoadSource()
-    local success, err = pcall(function()
+    local ok, err = pcall(function()
         local code = game:HttpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua")
-        loadstring(code)()
+        local success, innerErr = pcall(loadstring(code))
+        if not success then
+            error(innerErr)
+        end
     end)
 
-    if not success then
+    if not ok then
         warn("LoadSource Error:", err)
-        Rayfield:Notify({
-            Title = "Error",
-            Content = "Script failed to load. Check console.",
-            Duration = 6
-        })
+        pcall(function()
+            Rayfield:Notify({
+                Title = "Error",
+                Content = "Script failed to load. Check console.",
+                Duration = 6
+            })
+        end)
     else
-        Rayfield:Notify({
-            Title = "Success",
-            Content = "Farming Script Loaded!",
-            Duration = 4
-        })
+        pcall(function()
+            Rayfield:Notify({
+                Title = "Success",
+                Content = "Farming Script Loaded!",
+                Duration = 4
+            })
+        end)
     end
 end
 
--- Create Tab
-local FarmingTab = Window:CreateTab("Farming", nil)
+-- Create Tab safely
+local FarmingTab
+do
+    local ok, tab = pcall(function()
+        return Window:CreateTab("Farming", nil)
+    end)
+    if not ok then
+        warn("Failed to create tab:", tab)
+        return
+    end
+    FarmingTab = tab
+end
 
--- Create Button
-FarmingTab:CreateButton({
-    Name = "Load Farming Script",
-    Callback = LoadSource
-})
+-- Create Button safely
+pcall(function()
+    FarmingTab:CreateButton({
+        Name = "Load Farming Script",
+        Callback = function()
+            pcall(LoadSource)
+        end
+    })
+end)
 
-Rayfield:LoadConfiguration()
+-- Load configuration safely
+pcall(function()
+    Rayfield:LoadConfiguration()
+end)
