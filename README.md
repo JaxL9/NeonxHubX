@@ -1,8 +1,3 @@
 # NeonxHubX
-[!Exploit Label]
 
-![Styling](./style.svg)
-
-
-
-
+![Banner](./style.svg)
