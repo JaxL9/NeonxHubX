@@ -1,23 +1,62 @@
-<svg fill="100%" viewBox="0 0 600 200" width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 600 240" width="600" height="240" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         .container {
-          background-color: blue;
-          color: black;
-          font-family: fantasy, sans-serif;
-          font-weight: bold;
-          padding: 20px;
+          background: linear-gradient(135deg, #001a33 0%, #000d1a 100%);
+          color: #ffffff;
+          font-family: 'Segoe UI', Roboto, fantasy;
+          padding: 30px;
           text-align: center;
+          border: 2px solid #007bff;
+          border-radius: 15px;
+          box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+        }
+        h1 {
+          color: #00d4ff;
+          text-shadow: 0 0 10px #00d4ff;
+          margin: 0 0 10px 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        .message {
+          font-size: 1.1em;
+          color: #cccccc;
+          margin-bottom: 20px;
+        }
+        .key-box {
+          background: rgba(0, 212, 255, 0.1);
+          border: 1px dashed #00d4ff;
+          padding: 15px;
+          border-radius: 8px;
+          display: inline-block;
+          min-width: 250px;
+        }
+        .key-label {
+          font-size: 0.8em;
+          color: #00d4ff;
+          display: block;
+          margin-bottom: 5px;
+          text-transform: uppercase;
+        }
+        .key-value {
+          font-family: monospace;
+          font-size: 1.5em;
+          font-weight: bold;
+          color: #ffffff;
         }
       </style>
       <div class="container">
         <h1>NeonxHubX</h1>
-         Thank you for using my hub
-          for ktm hub use the key below \n
-        <p>KTMCOMEBACK?!:</p>
+        <div class="message">
+          Thank you for using my hub.<br/>
+          For KTM Hub, use the key below:
+        </div>
+        <div class="key-box">
+          <span class="key-label">Access Key</span>
+          <span class="key-value">KTMCOMEBACK?!</span>
+        </div>
       </div>
     </div>
   </foreignObject>
 </svg>
-
