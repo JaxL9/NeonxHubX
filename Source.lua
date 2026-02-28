@@ -1,18 +1,20 @@
-
-
 local Loader = {}
 Loader.__index = Loader
 
 function Loader.new(cfg)
     local self = setmetatable({}, Loader)
     self.cfg = cfg
+
+    -- Load Fluent safely
     local fluentOk, fluentLib = pcall(function()
-        return loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/main.lua"))()
+        return loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/source.lua"))()
     end)
+
     if not fluentOk or not fluentLib then
         warn("[Script Loader] Failed to load Fluent UI library!")
         return self
     end
+
     self.libs = { Fluent = fluentLib }
     print("[Script Loader] Fluent UI loaded successfully.")
     self:_initUI()
@@ -20,29 +22,24 @@ function Loader.new(cfg)
 end
 
 function Loader:_initUI()
-    if not self.libs.Fluent then
-        warn("[Script Loader] Fluent UI not available, cannot create window.")
-        return
-    end
     local win = self.libs.Fluent:CreateWindow(self.cfg.Window)
     if not win then
         warn("[Script Loader] Failed to create Fluent window.")
         return
     end
+
     self.window = win
     self.tabs = {
         Scripts = win:AddTab({ Title = "Scripts", Icon = "list" }),
         Info = win:AddTab({ Title = "Info", Icon = "info" })
     }
-    print("[Script Loader] Tabs created.")
+
     self:_addScriptButtons()
     self:_addInfo()
 end
 
 function Loader:_addScriptButtons()
-    local scripts = self.cfg.Scripts
-    for i = 1, #scripts do
-        local script = scripts[i]
+    for i, script in ipairs(self.cfg.Scripts) do
         self.tabs.Scripts:AddButton({
             Title = script.Name,
             Description = "Click to load " .. script.Name,
@@ -62,9 +59,14 @@ function Loader:_loadScript(url)
     if self.libs.Fluent and self.libs.Fluent.Unload then
         self.libs.Fluent:Unload()
     end
+
     local ok, err = pcall(function()
-        loadstring(game:HttpGet(url))()
+        local code = game:HttpGet(url)
+        local compiled = loadstring(code)
+        if not compiled then error("loadstring failed") end
+        compiled()
     end)
+
     if not ok then
         warn("[Script Loader Error]", err)
     end
@@ -77,8 +79,6 @@ function Loader:_addInfo()
     })
 end
 
-
-
 local Config = {
     Window = {
         Title        = "Enchanted Hub Loader",
@@ -89,35 +89,29 @@ local Config = {
         Theme        = "Dark",
         MinimizeKey  = Enum.KeyCode.LeftControl
     },
-    
+
     Scripts = {
-    {
-        Name = "Anti AFK",
-        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
-    },
-
-    {
-        Name = "Muscle Legends (Server Hop Kill)",
-        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
-    },
-
-    {
-        Name = "Muscle Legends Ktm Hub",
-        Url  = "https://raw.githubusercontent.com/zapstreams123/Key-System/main/Free"
-    },
-
-    {
-        Name = "Legends of Speed",
-        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
-    },
-
-{
-        Name = "Ninja Legends",
-        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
-    }
+        {
+            Name = "Anti AFK",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
+        },
+        {
+            Name = "Muscle Legends (Server Hop Kill)",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
+        },
+        {
+            Name = "Muscle Legends Ktm Hub",
+            Url  = "https://raw.githubusercontent.com/zapstreams123/Key-System/main/Free"
+        },
+        {
+            Name = "Legends of Speed",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
+        },
+        {
+            Name = "Ninja Legends",
+            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
+        }
     }
 }
-
-Loader.new(Config)
 
 Loader.new(Config)
