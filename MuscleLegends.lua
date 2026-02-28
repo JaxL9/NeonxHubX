@@ -41,14 +41,28 @@ local Window = Rayfield:CreateWindow({
 
 -- Safe LoadSource function
 local function LoadSource()
-    local ok, err = pcall(function()
+    local success, err = pcall(function()
+
         local code = game:HttpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua")
-        local success, innerErr = pcall(loadstring(code))
-        if not success then
-            error(innerErr)
+        if not code or code == "" then
+            error("Failed to fetch script (empty response)")
         end
+
+        local compiled = loadstring(code)
+        if not compiled then
+            error("loadstring failed to compile script")
+        end
+
+        compiled()
+
     end)
 
+    if not success then
+        warn("LoadSource Error:", err)
+    else
+        print("Script Loaded Successfully")
+    end
+end
     if not ok then
         warn("LoadSource Error:", err)
         pcall(function()
@@ -69,28 +83,7 @@ local function LoadSource()
     end
 end
 
--- Create Tab safely
-local FarmingTab
-do
-    local ok, tab = pcall(function()
-        return Window:CreateTab("Farming", nil)
-    end)
-    if not ok then
-        warn("Failed to create tab:", tab)
-        return
-    end
-    FarmingTab = tab
-end
 
--- Create Button safely
-pcall(function()
-    FarmingTab:CreateButton({
-        Name = "Load Farming Script",
-        Callback = function()
-            pcall(LoadSource)
-        end
-    })
-end)
 
 -- Load configuration safely
 pcall(function()
