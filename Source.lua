@@ -7,7 +7,7 @@ function Loader.new(cfg)
     local self = setmetatable({}, Loader)
     self.cfg = cfg
     local fluentOk, fluentLib = pcall(function()
-        return loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+        return loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/main.lua"))()
     end)
     if not fluentOk or not fluentLib then
         warn("[Script Loader] Failed to load Fluent UI library!")
@@ -91,28 +91,26 @@ local Config = {
     },
     
     Scripts = {
-        {
-            Name = "Anti AFK",
-            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
-        } 
-        
-        {
-            Name = "Muscle Legends (Server Hop Kill)",
-            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
-        },
-        {
-           Name = "Muscle Legends Ktm Hub",
-            Url = "https://raw.githubusercontent.com/zapstreams123/Key-System/main/Free"
-
-        },
-            Name = "Legends of Speed",
-            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
-        },
-        {
-            Name = "Ninja Legends",
-            Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
-        }
+    {
+        Name = "Anti AFK",
+        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
+    },
+    {
+        Name = "Muscle Legends (Server Hop Kill)",
+        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D"
+    },
+    {
+        Name = "Muscle Legends Ktm Hub",
+        Url  = "https://raw.githubusercontent.com/zapstreams123/Key-System/main/Free"
+    },
+    {
+        Name = "Legends of Speed",
+        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
+    },
+    {
+        Name = "Ninja Legends",
+        Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
     }
-}
+    }
 
 Loader.new(Config)
