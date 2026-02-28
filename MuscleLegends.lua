@@ -43,20 +43,13 @@ local Window = Rayfield:CreateWindow({
 
 -- Safe LoadSource function
 local function LoadSource()
-    local success, err = pcall(function()
+    local url = "https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua"
+    local code = game:HttpGet(url)
 
-        local code = game:HttpGet("https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua")
-        if not code or code == "" then
-            error("Failed to fetch script (empty response)")
-        end
-   
-        local compiled = loadstring(code)
-        if not compiled then
-            error("loadstring failed to compile script")
-        end
-
-        compiled()
-    end)
+    print("=== START ===")
+    print(code)
+    print("=== END ===")
+end
 
     if not success then
         warn("LoadSource Error:", err)
