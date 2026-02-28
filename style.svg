@@ -1,28 +1,59 @@
-<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
-  <!-- Background with Gradient -->
+<svg viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" width="100%" preserveAspectRatio="xMidYMid meet">
+
+  <!-- DEFINITIONS -->
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050a14"/>
-      <stop offset="100%" stop-color="#0a1428"/>
+      <stop offset="100%" stop-color="#0a1f3c"/>
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Animated Shine -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <!-- Outer Box -->
-  <rect x="0" y="0" width="100%" height="100%" rx="15" fill="url(#bgGradient)" stroke="#00d4ff" stroke-width="3"/>
+  <!-- BACKGROUND -->
+  <rect width="100%" height="100%" fill="url(#bg)" rx="25"/>
 
-  <!-- Main Title -->
-  <text x="50%" y="30%" text-anchor="middle" font-family="Arial, sans-serif" font-size="10%" font-weight="bold" fill="#00d4ff" style="text-transform: uppercase; letter-spacing: 0.7em;">
+  <!-- MAIN TITLE -->
+  <text x="50%" y="45%" text-anchor="middle"
+        font-family="Verdana, sans-serif"
+        font-size="70"
+        font-weight="bold"
+        fill="#00d4ff"
+        filter="url(#glow)"
+        letter-spacing="8">
     NEONXHUBX
   </text>
 
-  <!-- Subtitle -->
-  <text x="50%" y="50%" text-anchor="middle" font-family="Arial, sans-serif" font-size="4%" fill="#8899af">
-    Thank you for using our hub. We really appreciate a lot
+  <!-- SUBTITLE -->
+  <text x="50%" y="65%" text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="28"
+        fill="#8fbcd4">
+    High Quality Script Hub
   </text>
 
-  <!-- Key Box -->
-  <rect x="20%" y="65%" width="60%" height="25%" rx="8" fill="rgba(0,212,255,0.1)" stroke="#00d4ff" stroke-dasharray="5,5"/>
-  <text x="50%" y="80%" text-anchor="middle" font-family="monospace" font-size="5%" font-weight="bold" fill="#ffffff">
-    
-  </text>
+  <!-- Animated Shine Overlay -->
+  <rect x="-1000" y="0" width="1000" height="300" fill="url(#shine)" opacity="0.4">
+    <animate attributeName="x"
+             from="-1000"
+             to="1000"
+             dur="3s"
+             repeatCount="indefinite"/>
+  </rect>
+
 </svg>
