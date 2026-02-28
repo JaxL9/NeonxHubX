@@ -1,5 +1,8 @@
 # NeonxHubX
-  ![Exploit Label](https://img.shields.io)
+[!Exploit Label]
+
+![Styling](./style.svg)
+
 
 
 
