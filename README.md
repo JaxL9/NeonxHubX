@@ -1,4 +1,4 @@
 # NeonxHubX
-  [styles.css]
+  (styles.css)
 
 <label> Roblox Exploit </label>
