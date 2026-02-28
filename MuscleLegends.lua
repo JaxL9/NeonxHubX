@@ -66,9 +66,9 @@ ScriptsTab:CreateButton({
 })
 
 ScriptsTab:CreateButton({
-    Name = "Redz Hub",
+    Name = "Speed Hub X",
     Callback = function()
-        SafeLoad("https://raw.githubusercontent.com/jynzl/main/main/Musclas%20Legenos.lua")
+        SafeLoad("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua")
     end
 })
 
