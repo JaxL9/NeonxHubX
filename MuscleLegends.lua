@@ -62,12 +62,13 @@ ScriptsTab:CreateButton({
 })
 
 ScriptsTab:CreateButton({
-    Name = "Muscle Legends Ktm Hub",
-    Callback = function()
-        SafeLoad("https://raw.githubusercontent.com/zapstreams123/Key-System/main/Free")
+       Name = "Redz Hub"
+        Callback = function()
+            SafeLoad("https://raw.githubusercontent.com/jynzl/main/Musclas%20Legenos.lua"
     end
 })
 
+    
 ScriptsTab:CreateButton({
     Name = "Legends of Speed",
     Callback = function()
@@ -76,6 +77,7 @@ ScriptsTab:CreateButton({
 })
 
 ScriptsTab:CreateButton({
+    
     Name = "Ninja Legends",
     Callback = function()
         SafeLoad("https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends")
