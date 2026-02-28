@@ -47,7 +47,7 @@ local function LoadSource()
         if not code or code == "" then
             error("Failed to fetch script (empty response)")
         end
-
+   
         local compiled = loadstring(code)
         if not compiled then
             error("loadstring failed to compile script")
