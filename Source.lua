@@ -111,10 +111,13 @@ local Config = {
         Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed"
     },
 
-    {
+{
         Name = "Ninja Legends",
         Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends"
     }
     }
+}
+
+Loader.new(Config)
 
 Loader.new(Config)
