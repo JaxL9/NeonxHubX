@@ -97,7 +97,7 @@ local Config = {
         },
         {
             Name = "Muscle Legends",
-            Url  = "https://raw.githubusercontent.com/StupidProAArsenal/main/main/Musclas%20Legenos.lua"
+            Url  = "https://raw.githubusercontent.com/2581235867/21/main/By%20Tokattk"
         },
         
         {
@@ -115,5 +115,4 @@ local Config = {
     }
 }
 
-Loader.new(Config)
 Loader.new(Config)
