@@ -1,61 +1,68 @@
-<svg fill="none" viewBox="0 0 600 240" width="600" height="240" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
+    <div xmlns="http://www.w3.org">
       <style>
+        @keyframes pulse {
+          0% { box-shadow: 0 0 5px #00d4ff; }
+          50% { box-shadow: 0 0 20px #00d4ff; }
+          100% { box-shadow: 0 0 5px #00d4ff; }
+        }
         .container {
-          background: linear-gradient(135deg, #001a33 0%, #000d1a 100%);
+          background: linear-gradient(135deg, #050a14 0%, #0a1428 100%);
           color: #ffffff;
-          font-family: 'Segoe UI', Roboto, fantasy;
-          padding: 30px;
+          font-family: 'Segoe UI', Tahoma, sans-serif;
+          padding: 40px 20px;
           text-align: center;
-          border: 2px solid #007bff;
-          border-radius: 15px;
-          box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+          border: 2px solid #00d4ff;
+          border-radius: 20px;
+          box-sizing: border-box;
+          height: 290px; /* Fits inside viewBox */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
         h1 {
+          font-size: 42px;
+          margin: 0;
           color: #00d4ff;
-          text-shadow: 0 0 10px #00d4ff;
-          margin: 0 0 10px 0;
+          text-shadow: 0 0 15px #00d4ff;
           text-transform: uppercase;
-          letter-spacing: 2px;
+          letter-spacing: 5px;
         }
-        .message {
-          font-size: 1.1em;
-          color: #cccccc;
-          margin-bottom: 20px;
+        .subtitle {
+          color: #8899af;
+          margin: 10px 0 25px 0;
+          font-size: 16px;
         }
-        .key-box {
+        .key-container {
           background: rgba(0, 212, 255, 0.1);
-          border: 1px dashed #00d4ff;
-          padding: 15px;
-          border-radius: 8px;
-          display: inline-block;
-          min-width: 250px;
+          border: 2px dashed #00d4ff;
+          padding: 15px 40px;
+          border-radius: 10px;
+          animation: pulse 2s infinite ease-in-out;
         }
-        .key-label {
-          font-size: 0.8em;
-          color: #00d4ff;
-          display: block;
-          margin-bottom: 5px;
-          text-transform: uppercase;
-        }
-        .key-value {
-          font-family: monospace;
-          font-size: 1.5em;
+        .key-text {
+          font-family: 'Courier New', monospace;
+          font-size: 24px;
           font-weight: bold;
           color: #ffffff;
+          letter-spacing: 2px;
+        }
+        .footer {
+          margin-top: 20px;
+          font-size: 12px;
+          color: #4a5a70;
+          text-transform: uppercase;
         }
       </style>
       <div class="container">
         <h1>NeonxHubX</h1>
-        <div class="message">
-          Thank you for using my hub.<br/>
-          For KTM Hub, use the key below:
+        <div class="subtitle">Thank you for using our hub. Use the key below for KTM:</div>
+        <div class="key-container">
+          <div class="key-text">KTMCOMEBACK?!</div>
         </div>
-        <div class="key-box">
-          <span class="key-label">Access Key</span>
-          <span class="key-value">KTMCOMEBACK?!</span>
-        </div>
+        <div class="footer">Secure • Fast • Optimized</div>
       </div>
     </div>
   </foreignObject>
