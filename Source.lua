@@ -94,11 +94,7 @@ local Config = {
         {
             Name = "Anti AFK",
             Url  = "https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK"
-        },
-        {
-            Name = "Muscle Legends",
-            Url  = "https://raw.githubusercontent.com/2581235867/21/main/By%20Tokattk"
-        },
+        } 
         
         {
             Name = "Muscle Legends (Server Hop Kill)",
