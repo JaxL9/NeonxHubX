@@ -1,69 +1,28 @@
-<svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org">
-      <style>
-        @keyframes pulse {
-          0% { box-shadow: 0 0 5px #00d4ff; }
-          50% { box-shadow: 0 0 20px #00d4ff; }
-          100% { box-shadow: 0 0 5px #00d4ff; }
-        }
-        .container {
-          background: linear-gradient(135deg, #050a14 0%, #0a1428 100%);
-          color: #ffffff;
-          font-family: 'Segoe UI', Tahoma, sans-serif;
-          padding: 40px 20px;
-          text-align: center;
-          border: 2px solid #00d4ff;
-          border-radius: 20px;
-          box-sizing: border-box;
-          height: 290px; /* Fits inside viewBox */
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        h1 {
-          font-size: 42px;
-          margin: 0;
-          color: #00d4ff;
-          text-shadow: 0 0 15px #00d4ff;
-          text-transform: uppercase;
-          letter-spacing: 5px;
-        }
-        .subtitle {
-          color: #8899af;
-          margin: 10px 0 25px 0;
-          font-size: 16px;
-        }
-        .key-container {
-          background: rgba(0, 212, 255, 0.1);
-          border: 2px dashed #00d4ff;
-          padding: 15px 40px;
-          border-radius: 10px;
-          animation: pulse 2s infinite ease-in-out;
-        }
-        .key-text {
-          font-family: 'Courier New', monospace;
-          font-size: 24px;
-          font-weight: bold;
-          color: #ffffff;
-          letter-spacing: 2px;
-        }
-        .footer {
-          margin-top: 20px;
-          font-size: 12px;
-          color: #4a5a70;
-          text-transform: uppercase;
-        }
-      </style>
-      <div class="container">
-        <h1>NeonxHubX</h1>
-        <div class="subtitle">Thank you for using our hub. Use the key below for KTM:</div>
-        <div class="key-container">
-          <div class="key-text">KTMCOMEBACK?!</div>
-        </div>
-        <div class="footer">Secure • Fast • Optimized</div>
-      </div>
-    </div>
-  </foreignObject>
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050a14;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1428;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Box -->
+  <rect width="600" height="200" rx="15" fill="url(#bgGradient)" stroke="#00d4ff" stroke-width="3" />
+
+  <!-- Main Title -->
+  <text x="50%" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#00d4ff" style="text-transform: uppercase; letter-spacing: 4px;">
+    NEONXHUBX
+  </text>
+
+  <!-- Subtitle -->
+  <text x="50%" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#8899af">
+    Thank you for using our hub. For KTM, use the key:
+  </text>
+
+  <!-- Key Box -->
+  <rect x="175" y="125" width="250" height="50" rx="8" fill="rgba(0, 212, 255, 0.1)" stroke="#00d4ff" stroke-dasharray="5,5" />
+  <text x="50%" y="158" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#ffffff">
+    KTMCOMEBACK?!
+  </text>
 </svg>
