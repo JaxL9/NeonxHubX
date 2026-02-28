@@ -1,13 +1,10 @@
-
-Readmecontents.txt {
-
-  Background-color: blue;
-  color: Black;
-  font-family: Fantasy;
-  
-  font-weight: bold;
-  font-style: normal;
-
-
-
+/* Target the specific container for your readme text */
+.readme-contents {
+    background-color: blue;
+    color: black;
+    font-family: "Fantasy", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    padding: 10px; /* Optional: adds space so text isn't touching edges */
+    border-radius: 5px; /* Optional: smooths the corners */
 }
