@@ -1,86 +1,92 @@
--- Load Rayfield safely
-local Rayfield
-do
-    local ok, lib = pcall(function()
-        return loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
-    end)
-
-    if not ok or not lib then
-        warn("Failed to load Rayfield library:", lib)
-        return
-    end
-
-    Rayfield = lib
-end
+-- Load Rayfield
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
 -- Create Window
 local Window = Rayfield:CreateWindow({
     Name = "NeonxHubX",
-    Icon = 0,
     LoadingTitle = "Loading...",
     LoadingSubtitle = "by limkutr",
-    ShowText = "Rayfield",
-    Theme = "Default",
-    ToggleUIKeybind = "K",
-
-    DisableRayfieldPrompts = false,
-    DisableBuildWarnings = false,
-
     ConfigurationSaving = {
-        Enabled = true,
-        FolderName = "NeonxHubX",
-        FileName = "Config"
+        Enabled = false
     },
-
-    Discord = {
-        Enabled = false,
-        Invite = "",
-        RememberJoins = true
-    },
-
     KeySystem = false
 })
 
--- Safe LoadSource function
-local function LoadSource()
-    local url = "https://raw.githubusercontent.com/JaxL9/NeonxHubX/main/Source.lua"
-    local code = game:HttpGet(url)
+-- Create Tabs
+local ScriptsTab = Window:CreateTab("Scripts", 4483362458)
+local InfoTab = Window:CreateTab("Info", 4483362458)
 
-    print("=== START ===")
-    print(code)
-    print("=== END ===")
-end
+---------------------------------------------------
+-- SCRIPT BUTTONS (MERGED DIRECT LOAD)
+---------------------------------------------------
+
+local function SafeLoad(url)
+    Rayfield:Notify({
+        Title = "Loading Script",
+        Content = url,
+        Duration = 3
+    })
+
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(url))()
+    end)
 
     if not success then
-        warn("LoadSource Error:", err)
-        pcall(function()
-            Rayfield:Notify({
-                Title = "Error",
-                Content = "Script failed to load. Check console.",
-                Duration = 6
-            })
-        end)
+        warn("Script Load Failed:", err)
+        Rayfield:Notify({
+            Title = "Error",
+            Content = "Script failed. Check console.",
+            Duration = 5
+        })
     else
-        pcall(function()
-            Rayfield:Notify({
-                Title = "Success",
-                Content = "Farming Script Loaded!",
-                Duration = 4
-            })
-        end)
+        Rayfield:Notify({
+            Title = "Success",
+            Content = "Script Loaded!",
+            Duration = 4
+        })
     end
 end
 
--- Create Tab
-local FarmingTab = Window:CreateTab("Farming", nil)
-
--- Create Button
-FarmingTab:CreateButton({
-    Name = "Load Farming Script",
-    Callback = LoadSource
+ScriptsTab:CreateButton({
+    Name = "Anti AFK",
+    Callback = function()
+        SafeLoad("https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Anti-AFK")
+    end
 })
 
--- Load configuration safely
-pcall(function()
-    Rayfield:LoadConfiguration()
-end)
+ScriptsTab:CreateButton({
+    Name = "Muscle Legends (Server Hop Kill)",
+    Callback = function()
+        SafeLoad("https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/ML%20Killing%20%5BServer%20Hop%5D")
+    end
+})
+
+ScriptsTab:CreateButton({
+    Name = "Muscle Legends Ktm Hub",
+    Callback = function()
+        SafeLoad("https://raw.githubusercontent.com/zapstreams123/Key-System/main/Free")
+    end
+})
+
+ScriptsTab:CreateButton({
+    Name = "Legends of Speed",
+    Callback = function()
+        SafeLoad("https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Legends%20Of%20Speed")
+    end
+})
+
+ScriptsTab:CreateButton({
+    Name = "Ninja Legends",
+    Callback = function()
+        SafeLoad("https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Ninja%20Legends")
+    end
+})
+
+---------------------------------------------------
+-- INFO TAB
+---------------------------------------------------
+
+InfoTab:CreateParagraph({
+    Title = "About",
+    Content = "Some scripts are not maintained by me.\n\nHub by limkutr.\n\nSelect a script from Scripts tab."
+})
